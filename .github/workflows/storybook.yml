@@ -6,14 +6,19 @@ on:
     branches: ["main"]
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.build-publish.outputs.page_url }}
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - id: build-publish
-      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
-      with:
-        path: dist/storybook
-        build_command: yarn run storybook build
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn run storybook build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.5.0
+        with:
+          branch: gh-pages
+          folder: storybook-static # output folder from `npm run build-storybook`
