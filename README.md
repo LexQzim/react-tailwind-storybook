@@ -12,4 +12,4 @@ yarn install
 yarn run storybook
 ```
 
-Storybook gets autodeployed by pushing on main. You will find it [here](https://www.chromatic.com/setup?appId=65d919f660872832da7c87d7).
+Storybook gets autodeployed by pushing on main. You will find it in [chromatic](https://65d919f660872832da7c87d7-lkaznambla.chromatic.com)
