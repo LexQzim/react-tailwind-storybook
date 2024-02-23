@@ -2,12 +2,15 @@
   "name": "react-tailwind-storybook-playground",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://LexQzim.github.io/react-tailwind-storybook",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
+    "predeploy": "yarn run storybook build",
+    "deploy-storybook": "gh-pages -d storybook static",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -31,9 +34,11 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-plugin-storybook": "^0.6.15",
+    "gh-pages": "^6.1.1",
     "postcss": "^8",
-    "storybook": "^7.6.10",
+    "storybook": "^7.6.17",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "yarn@4.1.0"
 }
