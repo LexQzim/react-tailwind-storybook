@@ -2,11 +2,14 @@
 name: 'Chromatic Publish'
 
 # Event for the workflow
-on: push
+on:
+  push:
+    branches:
+      - main
 
 # List of jobs
 jobs:
-  test:
+  build-and-deploy:
     # Operating System
     runs-on: ubuntu-latest
     # Job steps
